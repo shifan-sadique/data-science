@@ -1,0 +1,86 @@
+import numpy as np
+
+x=np.array([7,9,2])
+y=np.array([2,3,5])
+print("the arrays are ")
+print(x,"\n",y)
+
+print("compared for greater")
+print(np.greater(x,y))
+
+print("compared for gr8 eq")
+print(np.greater_equal(x,y))
+
+print("LT")
+print(np.less(x,y))
+
+print("LE")
+print(np.less_equal(x,y))
+
+arr=np.arange(30,71)
+print(arr)
+
+arr1=np.identity(3)
+print(arr1)
+
+arr2=np.arange(21)
+print("the arr in range 20 is")
+print(arr2)
+arr2[(arr2 >= 9) & (arr2 <= 15)] *= -1
+print("after change")
+print(arr2)
+
+x=np.diag([1,2,3,4,5])
+print(x)
+
+print("the sum of arr is")
+print(np.sum(x))
+print("the sum of row")
+print(np.sum(x,axis=1))
+print("the sum of column is")
+print(np.sum(x,axis=0))
+
+import os
+x = np.arange(12).reshape(4, 3)
+print("Original array:")
+print(x)
+header = 'col1 col2 col3'
+np.savetxt('temp.txt', x, fmt="%d", header=header) 
+print("After loading, content of the text file:")
+result = np.loadtxt('temp.txt')
+print(result)
+
+nums1 = np.array([0.5, 1.5, 0.2])
+nums2 = np.array([0.4999999999, 1.500000000, 0.2])
+np.set_printoptions(precision=15)
+print("Original arrays:")
+print(nums1)
+print(nums2)
+print("\nTest said two arrays are equal (element wise) or not:?")
+print(nums1 == nums2)
+nums1 = np.array([0.5, 1.5, 0.23])
+nums2 = np.array([0.4999999999, 1.5000000001, 0.23])
+print("\nOriginal arrays:")
+np.set_printoptions(precision=15)
+print(nums1)
+print(nums2)
+print("\nTest said two arrays are equal (element wise) or not:?")
+print(np.equal(nums1, nums2))
+
+nums = np.arange(16, dtype='int').reshape(-1, 4)
+print("Original array:")
+print(nums)
+print("\nNew array after swapping first and last rows of the said array:")
+nums[[0,-1],:]=nums[[-1,0],:]
+print(nums)
+
+nums1 = np.array([[2, 5, 2],
+              [1, 5, 5]])
+nums2 = np.array([[5, 3, 4],
+              [3, 2, 5]])
+print("Array1:") 
+print(nums1)
+print("Array2:") 
+print(nums2)
+print("\nMultiply said arrays of same size element-by-element:")
+print(np.multiply(nums1, nums2))
