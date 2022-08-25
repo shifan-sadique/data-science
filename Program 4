@@ -1,0 +1,31 @@
+import pandas as pd
+
+#convert list to series
+names = ['shifan','harish','sachin']
+x= pd.Series(names)
+print(x)
+
+
+sr = pd.Series(pd.date_range('2021-05-01','2021-05-12',freq = 'D'))
+# To avoid dtype
+# Series.to_string
+print(sr.to_string(index=False))
+
+
+
+
+details = {
+    'Name' : ['a','b','c','d'],
+    'Age' : [24,25,26,27],
+}
+df = pd.DataFrame(details)
+print(df)
+
+
+
+
+details = [[1,2],[3,4]]
+df = pd.DataFrame(details)
+print(df)
+
+
