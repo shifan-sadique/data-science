@@ -29,3 +29,27 @@ df = pd.DataFrame(details)
 print(df)
 
 
+#read csv file to dataframe
+df = pd.read_csv('5_Pandas.csv')
+print(df.to_string()) 
+df = pd.DataFrame({'Name': ['e','a','a','b','c','d'],
+                   'Age': [1,2,1,3,3,4],
+                   'Rank': [0,1,2,3,4,5]})
+print(df.to_string())
+print('SORTED DATAFRAME')
+df = df.sort_values(by=['Name','Age'], ascending=[True,True])
+
+
+
+#change custom to defaut index
+data = {'Name': ['e','a','a','b','c','d'],
+                   'Age': [1,2,1,3,3,4],
+                   'Rank': [0,1,2,3,4,5]}
+index = {'a1', 'b1', 'c1', 'd1', 'e1','f1'}
+df = pd.DataFrame(data,index)
+#df.reset_index(inplace = True)
+print(df.to_string())
+df.reset_index(inplace = True, drop = True)
+print(df.to_string())
+print(df.to_string())
+
